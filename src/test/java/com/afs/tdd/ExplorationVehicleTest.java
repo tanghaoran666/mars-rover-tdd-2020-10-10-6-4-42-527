@@ -25,8 +25,8 @@ public class ExplorationVehicleTest {
     void should_move_one_step_successful() {
         explorationVehicle.init();
         Report report = explorationVehicle.move();
-        Location firstMoveLocation = new Location(0, 1);
-        assertEquals(report.getLocation(), firstMoveLocation);
+        Location moveLocation = new Location(0, 1);
+        assertEquals(report.getLocation(), moveLocation);
         assertEquals(report.getHeading(), Heading.NORTH);
     }
 
@@ -34,8 +34,17 @@ public class ExplorationVehicleTest {
     void should_move_three_step_successful() {
         explorationVehicle.init();
         Report report = explorationVehicle.move(3);
-        Location firstMoveLocation = new Location(0, 3);
-        assertEquals(report.getLocation(), firstMoveLocation);
+        Location moveLocation = new Location(0, 3);
+        assertEquals(report.getLocation(), moveLocation);
+        assertEquals(report.getHeading(), Heading.NORTH);
+    }
+
+    @Test
+    void should_move_five_step_successful() {
+        explorationVehicle.init();
+        Report report = explorationVehicle.move(5);
+        Location moveLocation = new Location(0, 5);
+        assertEquals(report.getLocation(), moveLocation);
         assertEquals(report.getHeading(), Heading.NORTH);
     }
 }
