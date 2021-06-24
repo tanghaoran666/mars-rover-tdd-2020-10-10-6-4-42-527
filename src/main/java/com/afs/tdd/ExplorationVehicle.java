@@ -9,4 +9,8 @@ public class ExplorationVehicle {
         this.heading = Heading.NORTH;
         return new Report(this.location, this.heading);
     }
+
+    public Report move() {
+        return null;
+    }
 }
