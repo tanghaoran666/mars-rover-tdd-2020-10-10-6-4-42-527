@@ -20,7 +20,7 @@ public class ExplorationVehicle {
     }
 
     public Report move(int step) {
-        this.location = new Location(0, 3);
+        this.location = new Location(0, step);
         return generateReport();
     }
 }
