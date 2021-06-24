@@ -47,4 +47,17 @@ public class ExplorationVehicleTest {
         assertEquals(report.getLocation(), moveLocation);
         assertEquals(report.getHeading(), Heading.NORTH);
     }
+
+    @Test
+    void should_move_continually_successful() {
+        explorationVehicle.init();
+        Report firstReport = explorationVehicle.move(5);
+        Location firstLocation = new Location(0, 5);
+        assertEquals(firstReport.getLocation(), firstLocation);
+        assertEquals(firstReport.getHeading(), Heading.NORTH);
+
+        Report secondReport = explorationVehicle.move(2);
+        Location secondLocation = new Location(0, 7);
+        assertEquals(secondReport.getLocation(), secondLocation);
+    }
 }
