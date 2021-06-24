@@ -11,6 +11,7 @@ public class ExplorationVehicle {
     }
 
     public Report move() {
-        return null;
+        this.location = new Location(0, 1);
+        return new Report(this.location, this.heading);
     }
 }
