@@ -29,4 +29,13 @@ public class ExplorationVehicleTest {
         assertEquals(report.getLocation(), firstMoveLocation);
         assertEquals(report.getHeading(), Heading.NORTH);
     }
+
+    @Test
+    void should_move_three_step_successful() {
+        explorationVehicle.init();
+        Report report = explorationVehicle.move(3);
+        Location firstMoveLocation = new Location(0, 3);
+        assertEquals(report.getLocation(), firstMoveLocation);
+        assertEquals(report.getHeading(), Heading.NORTH);
+    }
 }

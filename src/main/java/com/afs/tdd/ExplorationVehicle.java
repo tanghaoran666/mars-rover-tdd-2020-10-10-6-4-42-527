@@ -18,4 +18,8 @@ public class ExplorationVehicle {
     private Report generateReport() {
         return new Report(this.location, this.heading);
     }
+
+    public Report move(int step) {
+        return null;
+    }
 }
