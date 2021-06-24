@@ -3,6 +3,8 @@ package com.afs.tdd;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class ExplorationVehicleTest {
     ExplorationVehicle explorationVehicle;
 
@@ -15,7 +17,7 @@ public class ExplorationVehicleTest {
     void should_init_explore_vehicle_successful() {
         Report report = explorationVehicle.init();
         Location initLocation = new Location(0, 0);
-        assert (report.getLocation()).equals(initLocation);
-        assert (report.getHeading()).equals(Heading.NORTH);
+        assertEquals(report.getLocation(), initLocation);
+        assertEquals(report.getHeading(), Heading.NORTH);
     }
 }
