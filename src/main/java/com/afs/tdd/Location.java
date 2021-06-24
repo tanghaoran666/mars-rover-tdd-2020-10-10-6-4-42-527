@@ -24,4 +24,8 @@ public class Location {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
+    public void addYAxis(int step) {
+        this.y += step;
+    }
 }
