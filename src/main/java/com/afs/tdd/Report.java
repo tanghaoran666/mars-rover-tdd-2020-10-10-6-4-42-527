@@ -1,8 +1,8 @@
 package com.afs.tdd;
 
 public class Report {
-    private Location location;
-    private Heading heading;
+    private final Location location;
+    private final Heading heading;
 
     public Report(Location location, Heading heading) {
         this.location = location;
