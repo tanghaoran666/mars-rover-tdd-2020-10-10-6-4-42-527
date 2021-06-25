@@ -23,4 +23,8 @@ public class ExplorationVehicle {
         this.location.addYAxis(step);
         return generateReport();
     }
+
+    public Report turn(Direction left) {
+        return null;
+    }
 }
