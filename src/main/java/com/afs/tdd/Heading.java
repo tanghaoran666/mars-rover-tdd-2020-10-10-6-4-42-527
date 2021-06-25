@@ -27,4 +27,24 @@ public enum Heading {
                 .filter(heading -> heading.getValue() == value).findFirst()
                 .orElseThrow(() ->new RuntimeException("invalid heading value"));
     }
+
+    Heading turnLeft() {
+        Heading newHeading;
+        if (this == NORTH) {
+            newHeading = WEST;
+        } else {
+            newHeading = fromValue(getValue() - 1);
+        }
+        return newHeading;
+    }
+
+    Heading turnRight() {
+        Heading newHeading;
+        if (this == WEST) {
+            newHeading = NORTH;
+        } else {
+            newHeading = fromValue(getValue() + 1);
+        }
+        return newHeading;
+    }
 }

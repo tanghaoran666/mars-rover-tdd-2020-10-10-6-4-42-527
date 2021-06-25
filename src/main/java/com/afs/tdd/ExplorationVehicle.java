@@ -27,19 +27,12 @@ public class ExplorationVehicle {
     public Report turn(Direction direction) {
         Heading newHeading;
         if (direction == Direction.RIGHT) {
-            if (this.heading == Heading.WEST) {
-                newHeading = Heading.NORTH;
-            } else {
-                newHeading = Heading.fromValue(this.heading.getValue() + 1);
-            }
+            newHeading = heading.turnRight();
         } else {
-            if (this.heading == Heading.NORTH) {
-                newHeading = Heading.WEST;
-            } else {
-                newHeading = Heading.fromValue(this.heading.getValue() - 1);
-            }
+            newHeading = heading.turnLeft();
         }
         this.heading = newHeading;
         return generateReport();
     }
+
 }
