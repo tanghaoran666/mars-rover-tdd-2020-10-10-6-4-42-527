@@ -69,4 +69,13 @@ public class ExplorationVehicleTest {
         assertEquals(report.getLocation(), location);
         assertEquals(report.getHeading(), Heading.WEST);
     }
+
+    @Test
+    void should_turn_right_direction_successful() {
+        explorationVehicle.init();
+        Report report = explorationVehicle.turn(Direction.RIGHT);
+        Location location = new Location(0, 0);
+        assertEquals(report.getLocation(), location);
+        assertEquals(report.getHeading(), Heading.EAST);
+    }
 }
