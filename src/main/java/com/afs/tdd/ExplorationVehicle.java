@@ -25,6 +25,7 @@ public class ExplorationVehicle {
     }
 
     public Report turn(Direction left) {
-        return null;
+        this.heading = Heading.WEST;
+        return generateReport();
     }
 }
