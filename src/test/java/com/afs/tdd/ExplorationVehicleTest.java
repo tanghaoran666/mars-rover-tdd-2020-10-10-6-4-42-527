@@ -78,4 +78,30 @@ public class ExplorationVehicleTest {
         assertEquals(report.getLocation(), location);
         assertEquals(report.getHeading(), Heading.EAST);
     }
+
+    @Test
+    void should_turn_continually_direction_successful() {
+        explorationVehicle.init();
+        Report firstReport = explorationVehicle.turn(Direction.RIGHT);
+        Location location = new Location(0, 0);
+
+        assertEquals(firstReport.getLocation(), location);
+        assertEquals(firstReport.getHeading(), Heading.EAST);
+
+        Report secondReport = explorationVehicle.turn(Direction.LEFT);
+        assertEquals(secondReport.getHeading(), Heading.NORTH);
+    }
+
+    @Test
+    void should_turn_same_direction_continually_direction_successful() {
+        explorationVehicle.init();
+        Report firstReport = explorationVehicle.turn(Direction.RIGHT);
+        Location location = new Location(0, 0);
+
+        assertEquals(firstReport.getLocation(), location);
+        assertEquals(firstReport.getHeading(), Heading.EAST);
+
+        Report secondReport = explorationVehicle.turn(Direction.RIGHT);
+        assertEquals(secondReport.getHeading(), Heading.SOUTH);
+    }
 }
